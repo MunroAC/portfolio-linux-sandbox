@@ -23,72 +23,57 @@ flowchart LR
 
 ## 📂 Repository Structure
 
-    index.html - The modern, responsive portfolio landing page served to public clients.
-
-    Dockerfile - Instruction manifest for packaging the custom web server.
-
-    startup.sh - Automated shell script responsible for zero-touch VM provisioning.
-
-    README.md - Technical project documentation and system architecture details.
+* index.html - The modern, responsive portfolio landing page served to public clients.
+* Dockerfile - Instruction manifest for packaging the custom web server.
+* startup.sh - Automated shell script responsible for zero-touch VM provisioning.
+* README.md - Technical project documentation and system architecture details.
 
 ## 🚀 Step-by-Step Deployment Guide
 
 Follow these instructions to spin up the identical environment manually or via automation.
-Prerequisites
+Prerequisites:
 
-    A Google Cloud Platform active account (Free-Tier or paid).
-
-    GCP Compute Engine API enabled.
+* A Google Cloud Platform active account (Free-Tier or paid).
+* GCP Compute Engine API enabled.
 
 1. Host Virtual Machine Configuration
 
 Deploy a Compute Engine instance utilizing these specific parameters to remain within the GCP Always Free Tier:
 
     Name: sysadmin-portfolio-host
-
     Region: us-central1 (Iowa), us-east1 (South Carolina), or us-west1 (Oregon)
-
     Machine Type: e2-micro (1 Shared vCPU, 1 GB RAM)
-
     Boot Disk: Debian GNU/Linux 12, 30 GB standard persistent disk (pd-standard)
-
     Firewall: Enable Allow HTTP Traffic (This automatically attaches the http-server network tag)
 
 2. Manual Host Configuration & Containerization
 
 Once your VM is running, click the SSH button next to your instance in the GCP Console to access your secure shell, and execute the following commands:
-Update & Patch System Packages
-Bash
+* Update & Patch System Packages
 
-sudo apt-get update && sudo apt-get upgrade -y
+    sudo apt-get update && sudo apt-get upgrade -y
 
-Install Docker Engine
-Bash
+* Install Docker Engine
 
-curl -fsSL [https://get.docker.com](https://get.docker.com) -o get-docker.sh
-sudo sh get-docker.sh
-sudo usermod -aG docker $USER
+    curl -fsSL [https://get.docker.com](https://get.docker.com) -o get-docker.sh
+    sudo sh get-docker.sh
+    sudo usermod -aG docker $USER
 
 (Note: Exit the SSH window and reconnect for group permission updates to take effect)
 Create Your Application Image
 
-Create a Dockerfile and index.html in your directory, then compile your custom Nginx image:
-Bash
+* Create a Dockerfile and index.html in your directory, then compile your custom Nginx image:
+    docker build -t [your]-portfolio:v1 .
 
-docker build -t munro-portfolio:v1 .
+* Deploy the Container
 
-Deploy the Container
-Bash
-
-docker run -d -p 80:80 --name portfolio-web munro-portfolio:v1
+    docker run -d -p 80:80 --name portfolio-web [your]-portfolio:v1
 
 3. Setup Telemetry Monitoring
 
 To stream system RAM, CPU, and network telemetry directly to your GCP Cloud Monitoring dashboard, run the official Google Cloud Ops Agent installation:
-Bash
-
-curl -sSO [https://dl.google.com/cloudagents/add-google-cloud-ops-agent-repo.sh](https://dl.google.com/cloudagents/add-google-cloud-ops-agent-repo.sh)
-sudo bash add-google-cloud-ops-agent-repo.sh --also-install
+    curl -sSO [https://dl.google.com/cloudagents/add-google-cloud-ops-agent-repo.sh](https://dl.google.com/cloudagents/add-google-cloud-ops-agent-repo.sh)
+    sudo bash add-google-cloud-ops-agent-repo.sh --also-install
 
 📈 System Metrics & Monitoring
 
@@ -96,8 +81,6 @@ By deploying the Google Cloud Ops Agent, this infrastructure feeds real-time tel
 
 To view system health metrics:
 
-    Navigate to the Monitoring section of the Google Cloud Console.
-
-    Select Dashboards -> VM Instances.
-
-    View real-time charts detailing CPU Utilization, Memory Usage, Disk I/O, and Network Traffic.
+* Navigate to the Monitoring section of the Google Cloud Console.
+* Select Dashboards -> VM Instances.
+* View real-time charts detailing CPU Utilization, Memory Usage, Disk I/O, and Network Traffic.
