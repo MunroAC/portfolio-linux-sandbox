@@ -4,12 +4,12 @@ A cloud-hosted Linux system administration project featuring shell script automa
 flowchart TD
     User([Internet User]) -->|HTTP Port 80| FW{GCP Firewall}
     
-    subgraph VPC_Network [Google Cloud VPC Network]
-        FW -->|Allowed via tag: 'http-server'| VM[Compute Engine VM <br> Debian Linux]
+    subgraph VPC_Network ["Google Cloud VPC Network"]
+        FW -->|Allowed via tag: 'http-server'| VM["Compute Engine VM (Debian Linux)"]
     end
 
-    subgraph Host_Environment [VM Host Local Environment]
+    subgraph Host_Environment ["VM Host Local Environment"]
         VM -->|Port Mapping 80:80| Docker{Docker Engine}
-        Docker --> Container[Nginx Docker Container <br> Alpine Base]
-        Container --> HTML[Custom index.html <br> Munro AC]
+        Docker --> Container["Nginx Docker Container (Alpine Base)"]
+        Container --> HTML["Custom index.html (Munro AC)"]
     end
