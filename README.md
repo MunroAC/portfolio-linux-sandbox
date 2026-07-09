@@ -51,27 +51,29 @@ Deploy a Compute Engine instance utilizing these specific parameters to remain w
 Once your VM is running, click the SSH button next to your instance in the GCP Console to access your secure shell, and execute the following commands:
 * Update & Patch System Packages
 
-    sudo apt-get update && sudo apt-get upgrade -y
+        sudo apt-get update && sudo apt-get upgrade -y
 
 * Install Docker Engine
 
-    curl -fsSL [https://get.docker.com](https://get.docker.com) -o get-docker.sh
-    sudo sh get-docker.sh
-    sudo usermod -aG docker $USER
+        curl -fsSL [https://get.docker.com](https://get.docker.com) -o get-docker.sh
+        sudo sh get-docker.sh
+        sudo usermod -aG docker $USER
 
 (Note: Exit the SSH window and reconnect for group permission updates to take effect)
 Create Your Application Image
 
 * Create a Dockerfile and index.html in your directory, then compile your custom Nginx image:
-    docker build -t [your]-portfolio:v1 .
+
+      docker build -t [your]-portfolio:v1.
 
 * Deploy the Container
 
-    docker run -d -p 80:80 --name portfolio-web [your]-portfolio:v1
+        docker run -d -p 80:80 --name portfolio-web [your]-portfolio:v1
 
 3. Setup Telemetry Monitoring
 
 To stream system RAM, CPU, and network telemetry directly to your GCP Cloud Monitoring dashboard, run the official Google Cloud Ops Agent installation:
+    
     curl -sSO [https://dl.google.com/cloudagents/add-google-cloud-ops-agent-repo.sh](https://dl.google.com/cloudagents/add-google-cloud-ops-agent-repo.sh)
     sudo bash add-google-cloud-ops-agent-repo.sh --also-install
 
