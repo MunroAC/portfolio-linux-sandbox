@@ -16,10 +16,10 @@ flowchart LR
 ```
 ## 🛠️ Key Core Competencies Demonstrated
 
-Infrastructure Administration: Configured and secured a cloud-hosted Debian Linux virtual machine within GCP Free-Tier limits.
-Containerization: Built a custom, lightweight container image utilizing an Alpine-based Nginx parent image to minimize attack surface area.
-Infrastructure Automation: Developed an idempotent shell bootstrap script (startup.sh) that fully automates system updates, engine installations, and container initialization.
-Cloud Observability: Integrated the native Google Cloud Ops Agent to establish host-level logging and system telemetry streaming.
+* Infrastructure Administration: Configured and secured a cloud-hosted Debian Linux virtual machine within GCP Free-Tier limits.
+* Containerization: Built a custom, lightweight container image utilizing an Alpine-based Nginx parent image to minimize attack surface area.
+* Infrastructure Automation: Developed an idempotent shell bootstrap script (startup.sh) that fully automates system updates, engine installations, and container initialization.
+* Cloud Observability: Integrated the native Google Cloud Ops Agent to establish host-level logging and system telemetry streaming.
 
 ## 📂 Repository Structure
 
