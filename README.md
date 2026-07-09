@@ -14,17 +14,14 @@ flowchart LR
     Docker --> Container["Nginx Container (Port 80)"]
     VM --> OpsAgent["GCP Ops Agent"]
 ```
-🛠️ Key Core Competencies Demonstrated
+## 🛠️ Key Core Competencies Demonstrated
 
-    Infrastructure Administration: Configured and secured a cloud-hosted Debian Linux virtual machine within GCP Free-Tier limits.
+Infrastructure Administration: Configured and secured a cloud-hosted Debian Linux virtual machine within GCP Free-Tier limits.
+Containerization: Built a custom, lightweight container image utilizing an Alpine-based Nginx parent image to minimize attack surface area.
+Infrastructure Automation: Developed an idempotent shell bootstrap script (startup.sh) that fully automates system updates, engine installations, and container initialization.
+Cloud Observability: Integrated the native Google Cloud Ops Agent to establish host-level logging and system telemetry streaming.
 
-    Containerization: Built a custom, lightweight container image utilizing an Alpine-based Nginx parent image to minimize attack surface area.
-
-    Infrastructure Automation: Developed an idempotent shell bootstrap script (startup.sh) that fully automates system updates, engine installations, and container initialization.
-
-    Cloud Observability: Integrated the native Google Cloud Ops Agent to establish host-level logging and system telemetry streaming.
-
-📂 Repository Structure
+## 📂 Repository Structure
 
     index.html - The modern, responsive portfolio landing page served to public clients.
 
@@ -34,7 +31,7 @@ flowchart LR
 
     README.md - Technical project documentation and system architecture details.
 
-🚀 Step-by-Step Deployment Guide
+## 🚀 Step-by-Step Deployment Guide
 
 Follow these instructions to spin up the identical environment manually or via automation.
 Prerequisites
