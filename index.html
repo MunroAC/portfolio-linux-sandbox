@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Munro AC | GCP Cloud Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent: #38bdf8;
+            --success: #10b981;
+            --border: #334155;
+        }
+
+        * {
+            box-shadow: border-box;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 650px;
+            width: 100%;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .icon-container {
+            margin-bottom: 24px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 80px;
+            height: 80px;
+            background: rgba(56, 189, 248, 0.1);
+            border-radius: 50%;
+            color: var(--accent);
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+            padding: 6px 16px;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--success);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        p.description {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        p.description strong {
+            color: var(--text-primary);
+        }
+
+        .tech-stack {
+            border-top: 1px solid var(--border);
+            padding-top: 24px;
+            text-align: left;
+        }
+
+        .tech-stack-title {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        @media (max-width: 480px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .tech-card {
+            background: rgba(15, 23, 42, 0.4);
+            border: 1px solid var(--border);
+            padding: 12px 16px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .tech-icon {
+            font-size: 1.25rem;
+        }
+
+        .tech-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tech-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .tech-value {
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+            }
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+            }
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="icon-container">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17.5 19A3.5 3.5 0 0 0 21 15.5c0-2.79-2.54-4.5-5-4.5-.47 0-.89.09-1.29.26A5.5 5.5 0 0 0 5.5 13c-.34 0-.68.04-1 .12A4.5 4.5 0 0 0 1.5 17.5c0 2.49 2.01 4.5 4.5 4.5h11.5z"/>
+                <path d="M12 5V3M5 12H3m14 0h2M7.05 7.05L5.64 5.64m12.72 1.41l1.41-1.41"/>
+            </svg>
+        </div>
+
+        <h1>Munro AC</h1>
+        
+        <div class="status-badge">
+            <span class="status-dot"></span>
+            <span>Live Environment Deployment</span>
+        </div>
+
+        <p class="description">
+            Welcome to my cloud portfolio. This landing page is actively served from a <strong>Docker container</strong> running inside an isolated <strong>GCP Compute Engine Virtual Machine</strong> (Debian Linux).
+        </p>
+
+        <div class="tech-stack">
+            <div class="tech-stack-title">Infrastructure Blueprint</div>
+            <div class="grid">
+                <div class="tech-card">
+                    <span class="tech-icon">☁️</span>
+                    <div class="tech-info">
+                        <span class="tech-label">Cloud Provider</span>
+                        <span class="tech-value">Google Cloud</span>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <span class="tech-icon">💻</span>
+                    <div class="tech-info">
+                        <span class="tech-label">Host OS</span>
+                        <span class="tech-value">Debian GNU/Linux</span>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <span class="tech-icon">🐳</span>
+                    <div class="tech-info">
+                        <span class="tech-label">Container Engine</span>
+                        <span class="tech-value">Docker Community</span>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <span class="tech-icon">🌐</span>
+                    <div class="tech-info">
+                        <span class="tech-label">Web Server</span>
+                        <span class="tech-value">Nginx (Alpine-based)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
